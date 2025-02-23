@@ -48,36 +48,6 @@ const projects: CardProps[] = [
             link: "https://minegraph.cn/resourcepacks/14",
             target: "_blank"
         }
-    },
-    {
-        title: "VOXT PBR 创想体素",
-        description: "立体像素，优秀的PBR体验。",
-        image: "images/covers/voxt_1.webp",
-        tags: ["16x"],
-        link: {
-            link: "https://minegraph.cn/resourcepacks/14",
-            target: "_blank"
-        }
-    },
-    {
-        title: "VOXT PBR 创想体素",
-        description: "立体像素，优秀的PBR体验。",
-        image: "images/covers/voxt_1.webp",
-        tags: ["16x"],
-        link: {
-            link: "https://minegraph.cn/resourcepacks/14",
-            target: "_blank"
-        }
-    },
-    {
-        title: "VOXT PBR 创想体素",
-        description: "立体像素，优秀的PBR体验。",
-        image: "images/covers/voxt_1.webp",
-        tags: ["16x"],
-        link: {
-            link: "https://minegraph.cn/resourcepacks/14",
-            target: "_blank"
-        }
     }
 ];
 </script>
