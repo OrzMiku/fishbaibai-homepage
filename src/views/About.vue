@@ -1,5 +1,5 @@
 <template>
-    <div class="w-7xl mx-auto py-10 px-4 flex gap-8">
+    <div class="w-full max-w-7xl mx-auto py-10 px-4 flex gap-8">
         <img class="w-32 rounded-full shadow-md" src="images/avater.webp" alt="avater">
         <div>
             <h1 class="relative inline-block text-4xl group">

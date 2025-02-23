@@ -1,6 +1,6 @@
 <template>
     <Swiper :images="swiperImages" />
-    <div class="w-7xl mx-auto py-10 px-4">
+    <div class="w-full max-w-7xl mx-auto py-10 px-4">
         <div>
             <h1 class="relative inline-block text-4xl group">
                 作品集
