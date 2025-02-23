@@ -33,7 +33,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, defineProps } from 'vue';
+import { ref } from 'vue';
 
 const { images } = defineProps<{
     images: string[];

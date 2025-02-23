@@ -7,9 +7,9 @@
 
 <script lang="ts" setup>
 import Header from './components/Header.vue'
-
 import { useRouter } from 'vue-router'
 
+// Navs
 const router = useRouter()
 const navs = router.getRoutes()
   .filter(route => route.meta?.showInNav)
@@ -17,7 +17,6 @@ const navs = router.getRoutes()
     name: route.meta?.title as string || route.name as string,
     link: route.path
   }))
-
 </script>
 
 <style scoped>
