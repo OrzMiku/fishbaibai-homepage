@@ -1,6 +1,8 @@
 <template>
     <!-- Swiper -->
-    <div class="relative overflow-hidden group">
+    <div class="relative overflow-hidden group" 
+         @touchstart="handleTouchStart" 
+         @touchend="handleTouchEnd">
         <!-- Swiper Wrapper -->
         <div class="flex transition-transform duration-500"
             :style="{ transform: `translateX(-${currentItem * 100}%)` }">
@@ -40,6 +42,7 @@ const { images } = defineProps<{
 const currentItem = ref(0);
 
 let timer: number | undefined;
+let touchStartX = 0;
 
 function startAutoSlide() {
     timer = setInterval(() => {
@@ -74,6 +77,21 @@ function manualPrevSlide() {
 function selectSlide(index: number) {
     currentItem.value = index;
     resetTimer();
+}
+
+function handleTouchStart(e: TouchEvent) {
+    touchStartX = e.changedTouches[0].clientX;
+}
+
+function handleTouchEnd(e: TouchEvent) {
+    const touchEndX = e.changedTouches[0].clientX;
+    const diffX = touchStartX - touchEndX;
+    const threshold = 50;
+    if (diffX > threshold) {
+        manualNextSlide();
+    } else if (diffX < -threshold) {
+        manualPrevSlide();
+    }
 }
 
 startAutoSlide();
