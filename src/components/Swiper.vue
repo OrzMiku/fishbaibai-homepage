@@ -12,7 +12,7 @@
         </div>
         <!-- Swiper Pagination -->
         <div
-            class="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex bg-white px-2 py-1 rounded-full opacity-0 group-hover:opacity-100 transition duration-300">
+            class="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex bg-white px-2 py-1 rounded-full opacity-80 md:opacity-0 group-hover:opacity-100 transition duration-300">
             <span v-for="(item, index) in images" :key="index" @click="selectSlide(index)" :class="[
                 'w-2.5 h-2.5 rounded-full mx-1 cursor-pointer transition duration-300',
                 currentItem === index ? 'bg-gray-800' : 'bg-gray-300'
