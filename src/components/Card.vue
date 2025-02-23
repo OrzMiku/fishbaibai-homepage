@@ -1,11 +1,11 @@
 <script setup lang="ts">
 
-interface Link {
+export interface Link {
     link: string,
     target: "_blank" | "_self"
 }
 
-interface CardProps {
+export interface CardProps {
     image: string
     title: string
     description: string

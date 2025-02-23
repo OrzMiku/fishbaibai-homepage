@@ -6,14 +6,14 @@
         <!-- Swiper Wrapper -->
         <div class="flex transition-transform duration-500"
             :style="{ transform: `translateX(-${currentItem * 100}%)` }">
-            <div class="min-w-full" v-for="(item, index) in images" :key="item">
-                <img :src="item" alt="Swiper Image" class="w-full h-full max-h-128 object-cover">
+            <div class="min-w-full" v-for="(item, index) in images" :key="index">
+                <img :src="item" alt="Swiper Image" class="w-full h-full object-cover">
             </div>
         </div>
         <!-- Swiper Pagination -->
         <div
             class="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex bg-white px-2 py-1 rounded-full opacity-80 md:opacity-0 group-hover:opacity-100 transition duration-300">
-            <span v-for="(item, index) in images" :key="index" @click="selectSlide(index)" :class="[
+            <span v-for="(_, index) in images" :key="index" @click="selectSlide(index)" :class="[
                 'w-2.5 h-2.5 rounded-full mx-1 cursor-pointer transition duration-300',
                 currentItem === index ? 'bg-gray-800' : 'bg-gray-300'
             ]">
@@ -41,7 +41,7 @@ const { images } = defineProps<{
 
 const currentItem = ref(0);
 
-let timer: number | undefined;
+let timer: NodeJS.Timeout | undefined;
 let touchStartX = 0;
 
 function startAutoSlide() {

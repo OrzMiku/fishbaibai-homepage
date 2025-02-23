@@ -1,11 +1,18 @@
-import { createRouter, createWebHistory } from 'vue-router';
+import { createRouter, createWebHistory, type RouteRecordRaw } from 'vue-router';
+
+interface RouteMeta extends Record<string | number | symbol, unknown> {
+    title: string;
+    showInNav: boolean | undefined;
+}
+
+const routes: RouteRecordRaw[] = [
+    {path: '/', component: () => import('@/views/Home.vue'), meta: {title: '首页', showInNav: true} as RouteMeta},
+    {path: '/about', component: () => import('@/views/Snapshots.vue'), meta: {title: '截图', showInNav: true} as RouteMeta},
+];
 
 const router = createRouter({
     history: createWebHistory(),
-    routes: [
-        {path: '/', component: () => import('@/views/Home.vue'), meta: {title: '首页'}},
-        {path: '/about', component: () => import('@/views/About.vue'), meta: {title: '关于'}},
-    ]
+    routes
 });
 
 router.beforeEach((to, _, next) => {

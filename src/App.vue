@@ -8,16 +8,16 @@
 <script lang="ts" setup>
 import Header from './components/Header.vue'
 
-const navs = [
-  {
-    name: '首页',
-    link: '/',
-  },
-  {
-    name: '关于',
-    link: '/about',
-  },
-]
+import { useRouter } from 'vue-router'
+
+const router = useRouter()
+const navs = router.getRoutes()
+  .filter(route => route.meta?.showInNav)
+  .map(route => ({
+    name: route.meta?.title as string || route.name as string,
+    link: route.path
+  }))
+
 </script>
 
 <style scoped>
