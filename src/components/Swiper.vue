@@ -4,10 +4,10 @@
          @touchstart="handleTouchStart" 
          @touchend="handleTouchEnd">
         <!-- Swiper Wrapper -->
-        <div class="flex transition-transform duration-500"
+        <div class="flex h-full transition-transform duration-500"
             :style="{ transform: `translateX(-${currentItem * 100}%)` }">
             <div class="min-w-full" v-for="(item, index) in images" :key="index">
-                <img :src="item" alt="Swiper Image" class="w-full h-full object-cover">
+                <img :src="item" alt="Swiper Image" class="w-full h-full object-cover object-center">
             </div>
         </div>
         <!-- Swiper Pagination -->

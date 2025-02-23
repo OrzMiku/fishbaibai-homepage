@@ -1,5 +1,5 @@
 <template>
-    <Swiper class="grow" :images="swiperImages" />
+    <Swiper :images="swiperImages" />
 </template>
 
 <script setup lang="ts">
